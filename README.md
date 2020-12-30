@@ -1,35 +1,36 @@
-# Let's try to do a VueJs app :)
+Bonjour voici l'un de mes projets que j'ai effectué l'année derniére, il s'agit d'un site de donation.
 
-## Out of scope for this project
+I.DESCRIPTION:
+Le thème du projet étant « Rendre le monde meilleur », notre site offre la possibilité aux utilisateurs de pouvoir faire et avoir accès à toute sorte d’annonces de dons, que l’utilisateur aura décrit, avec un type de don et une description de ce dernier.
+Lorsque l’utilisateur est sur la page d’accueil, un message de bienvenue s’affiche pour l’accueillir. Il aura ensuite la possibilité d’aller sur la page “Annonces” pour avoir accès à toutes les annonces publiées par d‘autres utilisateurs. Chaque annonce contient le nom de l’utilisateurs qui l’a publiée, son numéro de téléphone, la région dans laquelle le don peut s’effectuer, un type ainsi qu’une description du don qu’il offre.
+Il a aussi accès au classement des meilleures annonces de dons, et ce via la page « Classement », le but de cela étant de créer de la concurrence et d’inciter les utilisateurs à faire plus de dons afin de se retrouver en tête de liste du classement.
+Si l’utilisateur a publié une annonce, il peut la retrouver sur sa page d’annonces personnelle « Mes annonces ». Enfin, il a aussi accès à son profil où se trouve ses informations personnelles ainsi que ses annonces.
 
-- [x] Backend
+II.FONCTIONALITE: 
+La première fonctionnalité du site est la gestion d’utilisateurs, l’utilisateur devra donc s’inscrire en remplissant un formulaire qui demande le nom complet de l’utilisateur, son numéro de téléphone ainsi qu’un mot de passe pour son compte.
+Une fois inscrit l’utilisateur peut aller surfer sur les pages du site, et peut donc voir les annonces disponibles, mais aussi publier sa propre annonce.
+Loin des annonces, l’utilisateur peut également modifier certaines de ses informations personnelles comme son numéro de téléphone.
+En dernier lieu, l’utilisateur peut se déconnecter à tout moment à partir du bouton « Loggout ».
 
-## Very light SPA in VueJs. What we expect ?
+III.ROUTES:
+'/' : la page index
+'/register' : la route pour s’inscrire
+'/login' : la route pour se connecter
+'/home' : la route vers la page d’accueil
+'/annonces' : la route vers la page des annonces
+'/classement' : la route vers la page des classements
+'/Profil' :la route vers la page du profil
+'/edited' :la route pour modifier le numéro de téléphone
+'/new_annonce' :la route vers la page pour remplir les champs d’une nouvelle annonce
+'/submit' :la route qui ajoute une nouvelle annonce
+'/Mes-annonces' : la route vers la page de mes annonces
+'/loggout' : la route pour se déconnecter.
 
-- [ ] The possibility to create an account
+IV.MODULES NECESSAIRE:
+express, express-session, mysql, bcrypt, pug, nodemon, ejs, JSon 
 
-- [ ] The possibility to log in / log off
-
-- [ ] As user, I want to be able to customize my space (custom colors, availability to move (drag) some widgets in other place ...)
-
-- [ ] Retrieving my user space at log in, like it was when we log out
-
-## What should this app look like ?
-
-This part is free. However some elements must be able to be moved, modified, ect... As said before, these modified elements will have to be in the same state if we reconnect.
-
-Keep it simple as possible, it is not your design skills that are tested but more your capability to write clean and well designed code with best practice in a modern front-end framework. Obviously, it could be nice designed too 😄.
-
-## What about backend ?
-
-Just simulate with your favorite tool, example [MirageJs](https://miragejs.com/docs/getting-started/introduction/)
-
-## How to submit ?
-
-To introduce your project, please start by forking this repo and submit a pull request when you think it is OK.
-
-Please do not forget to write a README other than the one writing by your tools and add it any information you feel is relevant.
-
-## Need extra information ? Questions about the project ? ...
-
-For any further question, contact me by email - 2m@whatafix.com
+V.COMMENT LANCER LE SITE :
+Après avoir installer les modules nécessaire, se rendre sur le fichier « db.js » qui se trouve sur dans le dossier « core » et remplacer les champs « user » et « password » respectivement par votre nom d’utilisateur et votre mot de passe, et « databse » par le nom de votre base de données (humanitaide) puis ajouter votre port si nécessaire. Refaire les mêmes operations sur le fichier « import.js »
+Se rendre dans le dossier « core » puis ouvrir un terminal, exécuter la commande node import.js.
+Si tout a été correctement configurer la base de données humanitaide devrait être importée.
+Revenir sur le projet puis dans le terminal, exécuter la commande nodemon app.
