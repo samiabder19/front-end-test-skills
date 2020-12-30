@@ -1,0 +1,21 @@
+extends layout
+mixin message(opp, name)
+    if(opp)
+        h1.greeting Bienvenue 
+            span=name 
+    else 
+        h1.greeting Bienvenue  
+            span=name 
+            |  sur notre site
+            
+
+
+block content
+    .dashboard 
+        .user 
+            +message(opp, name)
+            .img-home
+             img(src="img/home.jpg")
+
+           
+            

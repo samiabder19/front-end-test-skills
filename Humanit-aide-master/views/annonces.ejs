@@ -1,0 +1,78 @@
+
+<html>
+  <head>
+    <title>Annonces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+    <nav class="site-header sticky-top py-1"style="background-color: black;">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="#" aria-label="Product">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path></svg>
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="/home">Home</a>
+        <a class="py-2 d-none d-md-inline-block" href="/classement">Classement</a>
+        <a class="py-2 d-none d-md-inline-block" href="/Mes-annonces">Mes annonces</a>
+        <a class="py-2 d-none d-md-inline-block" href="/new_annonce">Nouvelle annonce</a>
+        <a class="py-2 d-none d-md-inline-block" href="/profil">Mon profil</a>
+
+        
+  
+      </div>
+      <div></div></nav>
+      <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+      
+    <div class="card" style="width: 20rem;left: 500px;">
+
+      <div class="card-body " style="font-family: 'Libre Baskerville', serif;">
+        
+        <p class="card-text" >"Nous ne pouvons pas aider tout le monde, mais tout le monde peut aider quelq'un"</p> 
+        </style>
+        
+        <h4 class="card-title">Ronald Regan</h4>
+        
+      </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" style="font-family: 'Libre Baskerville', serif;">
+          <h1 style = "padding-top: 20px;padding-bottom: 20px;text-align: center;width:1300px; ">
+            Annonces disponible
+          </h3>
+        </div>
+      </div>
+
+    <%
+    if(userData.length!=0){
+    var i=1;
+    userData.forEach(function(data){
+    %>
+    <div class="card-header"style="width: 350px;margin-left: 490px;margin-top: 20px;">
+      <h4 class="my-0 font-weight-normal">Publié par <%=data.username %> </h4>
+    </div>
+    <div class="card-body"style="width: 350px;margin-left: 490px;margin-top: 20px;">
+      <h2 class="card-title pricing-card-title"><%=data.type %></h2>
+      <ul class="list-unstyled mt-3 mb-4">
+        <h3>
+        <small class="text-muted">Telephone : <%=data.telephone %></small><br>
+        <small class="text-muted">Region : <%=data.region%></small><br>
+        <small class="text-muted" style="font-family: 'Asap', sans-serif; font-size: large; ">Description : <%=data.description %> </small><br>
+      </h3>
+      </ul>
+     
+    </div>
+    <%  i++; }) %>
+    <% } else{ %>
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Pas d'annonce !</h4>
+      </div>
+      <% } %>
+    
+    
+  </body>
+</html>
